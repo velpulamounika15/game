@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+   .container{
+        height: 460px;
+        width: 450px;
+        background-color:green;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        font-weight: bold;
+    }
+    h1{
+        color: rgb(237, 172, 9);
+        font-size: 30px;
+        font-weight: bold;
+        font-size: 45px;
+    }
+    button{
+        padding: 15px;
+        background-color: rgb(237, 173, 10);
+        border-radius: 5px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 10px;
+        
+    }
+    #message-el{
+        font-style: italic;
+        color: white;
+    }
+    h3{
+        font-size: 30px;
+    }
+    h2{
+        color: white;
+        font-size: 35px;
+    }
+   </style>
+</head>
+<body>
+    <section class="container">
+        <h1>BLACK JACK</h1>
+        <h3 id="message-el">want to play a round</h3> 
+        <h2 id="sum-el">sum:</h2>
+        <button onclick="startgame()">START GAME</button>
+        <button onclick="newcard()">NEW CARD</button>
+        <button onclick="reset()">RESET GAME</button>
+        
+    </section>
+
+
+    <script>
+       let firstcard=10
+       let secondcard=11
+       let sum=firstcard+secondcard
+       let message=""
+       
+
+
+       let messageEL=document.getElementById("message-el")
+       console.log(messageEL);
+
+       
+
+
+       let sumEL=document.getElementById("sum-el")
+       console.log(sumEL);
+ 
+       
+       function startgame(){
+
+        sumEL.textContent="sum:"+sum
+
+        cardsEL=textContent="cards: " +firstcard
+
+        if(sum<20){
+            message="do you want to draw a new card"
+
+        }
+        else if(sum==21){
+            message="whooo you've got a blackjack"
+        }
+        else{
+            message="you are out of the game"
+        }
+        messageEL.textContent=message
+       }
+
+       function newcard(){
+        let card=7
+        sum+=card
+        startgame()
+       }
+
+       function reset(){
+        let reset1=0
+        sum=0
+        startgame()
+       }
+    </script>
+</body>
+</html>
